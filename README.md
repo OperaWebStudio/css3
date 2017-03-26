@@ -1,2 +1,2 @@
-# css3
-css3 useful code snippets
+# CSS3
+Useful CSS3 snippets
