@@ -1,0 +1,52 @@
+/* star rating*/
+.stars-wrap{
+	display: inline-block;
+  margin-top: 17px;
+}
+.stars{
+	display: flex;
+	flex-direction: row-reverse;
+}
+.star-grade {
+	background: url(../img/star-white-mobile.png);
+	width: 50px;
+	height: 28px;
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+	&.active,
+	&:hover{
+		> div{
+			width: 50px;
+		}
+		~ a > div{
+			width: 50px;
+		}
+	}
+	@include susy-breakpoint($sm){
+		background: url(../img/star-white.png);
+		width: 34px;
+		height: 28px;
+		margin-top: 0;
+		&.active,
+		&:hover{
+			> div{
+				width: 34px;
+			}
+			~ a > div{
+				width: 34px;
+			}
+		}
+	}
+	div{
+		background: url(../img/star-gold-mobile.png);
+		width: 0;
+		height: 28px;
+		@include transition(all .25s ease-in-out);
+		
+		@include susy-breakpoint($sm){
+			background: url(../img/star-gold.png);
+		}
+	}
+}
+/* end star rating */
