@@ -1,0 +1,84 @@
+/* team slider */
+.owl-carousel.team-slider{
+	@include container(1920px);
+	margin-bottom: 60px;
+	.sls-descr{
+		a{
+			font-family: $title_font;
+		}
+	}
+	/* mobile version */
+	@include susy-media(1px 767px){	
+		padding: 0 20px;
+		@include slider-dots;
+		.owl-dots{
+			margin: 20px auto 0;
+		}
+		.sls-descr{
+			text-align: center;
+			a{
+				font-size: 22px;
+				line-height: 18px;
+			}
+		}
+		.sls-aside{
+			display: none;
+		}	
+	}
+	/* end mobile version */
+	/* tablet and desktop version */ 
+	/* on hover showing staff */
+	@include susy-breakpoint($sm){
+		.owl-item .sls-item{
+			position: relative;
+			background: #FFF;
+			z-index: 2;
+			cursor: pointer;
+			.sls-descr{
+				a{
+					font-size: 28px;
+					text-decoration: none;
+					border-bottom: none;
+				}
+				span{
+					color: #333;
+				}
+			}	
+			&:hover{
+				.sls-aside{
+					transition: all .25s ease;
+					opacity: 1;
+					transform: translateY(0%);
+					transition-delay: .25s;
+				}
+				.sls-descr{
+					opacity: 0;
+					transition: opacity .25s ease;
+				}
+			}
+			@include sls-item;
+		}
+	}
+	.sls-aside{
+		border: 1px solid #3B79E0;
+		@include specialist-description;
+		display: block;
+	  width: 100%;
+	  height: 100%;
+	  overflow: hidden;
+		
+		transform: translateY(100%);
+	  opacity: 0; 
+	  
+	  position: absolute;
+	  transition: all .35s ease;
+	  transition-delay: .7s;
+	  opacity: 0;
+	  top: 0;
+	  left: 0;
+	  background: #FFF; 
+	}
+
+	/* end on hover showing staff */
+	/* end tablet and desktop version */ 
+}
